@@ -1,0 +1,22 @@
+#my-heading {
+    text-align: center;
+}
+
+.teslas-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.add-car-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+}
+
+label {
+    margin-bottom: 8px;
+}

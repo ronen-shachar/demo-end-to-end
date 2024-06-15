@@ -1,7 +1,7 @@
 # Get code
 Open terminal and run:
 ```sh
-git clone https://github.com/benrotlevy/demo-end-to-end.git
+git clone https://github.com/ronen-shachar/demo-end-to-end.git
 ```
 
 # Import data

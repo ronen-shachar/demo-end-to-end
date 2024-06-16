@@ -7,10 +7,14 @@ git clone https://github.com/benrotlevy/demo-end-to-end.git
 # Import data
 Open terminal and run:
 ```sh
-$ mongoimport mongodb://127.0.0.1:27017/teslaDB -c cars server/teslaDB.cars.json
-2024-06-15T19:13:56.977+0300    connected to: mongodb://127.0.0.1:27017/teslaDB
-2024-06-15T19:13:57.101+0300    3 document(s) imported successfully. 0 document(s) failed to import.
+mongoimport mongodb://127.0.0.1:27017/teslaDB -c cars server/teslaDB.cars.json
 ```
+
+OR
+1. Open Compass
+1. Create new database `teslaDB`
+1. Create new collection `cars`
+1. Import `server/teslaDB.cars.json`
 
 # Install application dependencies
 Open terminal and run
@@ -18,5 +22,12 @@ Open terminal and run
 cd server && npm install
 ```
 
+# Run application
+a. Start backend
+Run at the directory `server`
+```sh
+node index.js
+```
 
-
+b. Start frontend
+Start Live site on `client/index.html`

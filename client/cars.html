@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Teslas</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="logout-wrapper">
+        <button id="logout-btn">Logout</button>
+                <script>
+                    const logoutBtn = document.getElementById('logout-btn');
+                    logoutBtn.addEventListener('click', () => {
+                        fetch('http://localhost8080/logout')
+                            .then(() => {
+                                window.location.href = 'index.html';
+                            });
+                    });
+                </script>
+                
+
+    <h1 id="my-heading">Teslas</h1>
+    <div class="add-car-wrapper">
+        <label for="car-name"> Car Name
+            <input id="car-name" type="text" placeholder="car's name">
+        </label>
+        <label for="car-image">
+            Car Image URL
+            <input id="car-image" type="text" placeholder="image url">
+        </label>
+        <button id="add-btn">Add Car</button>
+    </div>
+    <div class="teslas-container"></div>
+
+    <script src="cars.js"></script>
+</body>
+</html>
+
+</html>

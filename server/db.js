@@ -17,8 +17,14 @@ const carSchema = new Schema({
     imgSrc: String
 })
 
+const userSchema = new Schema({
+    username: String,
+    password: String
+})
+
 const Car = mongoose.model('cars', carSchema)
-            
+const User = mongoose.model('users', userSchema)
+
 async function getCars() {
     const result = await Car.find()
     return result
@@ -44,6 +50,10 @@ async function deleteCar(carId) {
     return result.deletedCount === 1;
 }
 
+async function getUserId(username) {
+    const result = await User.findOne({username: username})
+    return "99" // result._id
+}
 
 main()
 
@@ -52,5 +62,6 @@ module.exports = {
     getCarById,
     createCar,
     updateCarName,
-    deleteCar
+    deleteCar,
+    getUserId
 }

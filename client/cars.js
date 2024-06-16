@@ -5,15 +5,17 @@ const carImageInput = document.getElementById("car-image");
 addTeslaBtn.addEventListener("click", () => addTesla(carNameInput.value, carImageInput.value));
 
 async function getTeslas() {
-    try {
-        const res = await fetch("http://localhost:8080/api/teslas");
-        const data = await res.json();
-        console.log(data);
-
-        data.forEach(carObject => appendCar(carObject));
-    } catch (error) {
-        console.error(error);
-    }
+  try {
+    const res = await fetch(
+      "http://localhost:8080/api/teslas?userId=" +
+        localStorage.getItem("userId")
+    );
+    const data = await res.json();
+    console.log(data);
+    data.forEach((carObject) => appendCar(carObject));
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 async function addTesla(name, imgSrc) {
